@@ -1,3 +1,11 @@
 audio/
 text/
-venv/ 
+venv/
+.DS_Store
+
+# IDE/Editor specific
+.vscode/
+.idea/
+.cursor-server/
+.replit
+replit.nix 
