@@ -34,7 +34,8 @@
 2.  **(推奨) 仮想環境の作成と有効化:**
     ```bash
     python -m venv venv
-    source venv/bin/activate  # Linux/macOS
+    source venv/bin/activate      # Linux/macOS (bash/zsh など)
+    source venv/bin/activate.fish # Linux/macOS (fish)
     # venv\Scripts\activate  # Windows
     ```
 
