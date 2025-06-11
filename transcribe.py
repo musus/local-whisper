@@ -52,7 +52,14 @@ def transcribe_audio(input_file, output_file, model_size="base"):
     print("文字起こしが完了しました。")
 
     # 出力ファイルに結果を書き込み
-    output_path = output_file or f"{os.path.splitext(input_file)[0]}.txt"
+    if output_file:
+        output_path = output_file
+    else:
+        # textディレクトリに同じファイル名で保存
+        base_name = os.path.splitext(os.path.basename(input_file))[0]
+        output_dir = "text"
+        os.makedirs(output_dir, exist_ok=True)
+        output_path = os.path.join(output_dir, f"{base_name}.txt")
     try:
         with open(output_path, "w", encoding="utf-8") as f:
             f.write(result["text"])
